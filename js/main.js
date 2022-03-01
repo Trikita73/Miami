@@ -1,3 +1,5 @@
+// Slider-Main -->
+
 const sliderMain = new Swiper('.slider_main', {
     freeMode : true,
     centeredSlides: true,
@@ -13,4 +15,20 @@ const sliderMain = new Swiper('.slider_main', {
             spaceBetween: 60
         }
     }
+})
+
+// Slider-BG -->
+
+const sliderBg = new Swiper('.slider_bg', {
+    centeredSlides: true,
+    parallax: true,
+    spaceBetween: 60,
+    slidesPerView: 3.5,
+})
+sliderMain.controller.control = sliderBg
+
+document.querySelectorAll('.slider__item').forEach(item => {
+	item.addEventListener('click', event => {
+		item.classList.toggle('opened')
+	})
 })
